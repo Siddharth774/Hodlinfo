@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hodlinfo</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <div class="main-wrapper container-fluid g-0">
+        <div class="content-navbar">
+            <div class="header-wrapper align-items-center justify-content-sm-center row">
+                <div class="text-center-sm col-12 col-sm-7 col-md-5 col-lg-4">
+                    <a href="/">
+                        <div class="logo-wrapper">
+                            <img src="/images/hodlinfo-logo-white.png" alt="logo">
+                        </div>
+                    </a>
+                </div>
+                <div class="center-header col-12 col-sm-12 col-md-2 col-lg-4">
+                    <div class="btn-group">
+                        <select name="INR" id="INR" class="btn-select-class">
+                            <option value="INR">INR</option>
+                        </select>
+                    </div>
+                    <div class="btn-group">
+                        <select name="BTC" id="BTC" class="btn-select-class">
+                            <option value="BTC">BTC</option>
+                            <option value="ETH">ETH</option>
+                            <option value="USDT">USDT</option>
+                            <option value="XRP">XRP</option>
+                            <option value="TRX">TRX</option>
+                            <option value="DASH">DASH</option>
+                            <option value="ZEC">ZEC</option>
+                            <option value="XEM">XEM</option>
+                            <option value="IOST">IOST</option>
+                            <option value="WIN">WIN</option>
+                            <option value="BTT">BTT</option>
+                            <option value="WRX">WRX</option>
+                        </select>
+                    </div>
+                    <div class="btn-group">
+                        <button type="BUY-BTC" class="btn-class">BUY BTC</button>
+                    </div>
+                </div>
+                <div class="right-header col-12 col-sm-12 col-md-5 col-lg-4">
+                    <label class="switch">
+                        <input type="checkbox" onchange="toggleTheme()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="content-table">
+            <% if(details!=null) { %>
+                <table class="table-wrapper">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Last Traded Price</th>
+                            <th>Buy / Sell Price</th>
+                            <th>Volume</th>
+                            <th>base_unit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <% details.forEach(function(item, index){ %>
+                            <tr>
+                                <td>
+                                    <%= index+1 %>
+                                </td>
+                                <td>
+                                    <%= item.name%>
+                                </td>
+                                <td>
+                                    &#8377; <%= item.last%>
+                                </td>
+                                <td>
+                                    &#8377; <%= item.buy%> / <%= item.sell%>
+                                </td>
+                                <td>
+                                    <%= item.volume%>
+                                </td>
+                                <td>
+                                    <%= item.base_unit%>
+                                </td>
+                
+                            </tr>
+                            <% }) %>
+                        </table>
+                        <% } %>
+                    </tbody>
+        </div>
+        <div class="content-footer"></div>
+    </div>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+
+            var tbody = document.getElementById('table-body');
+            tbody.classList.toggle('tbody-dark-mode');
+
+            var thead = document.getElementsByTagName('th');
+            for(var i=0; i < thead.length; i++) {
+                thead[i].classList.toggle('thead-dark-mode');
+            }
+            
+            var btn_groups = document.getElementsByClassName('btn-group');
+            for(var i=0; i < btn_groups.length; i++) {
+                btn_groups[i].classList.toggle('btn-dark-mode');
+            }
+
+            var btn_selects = document.getElementsByClassName('btn-select-class');
+            for(var i=0; i < btn_selects.length; i++) {
+                btn_selects[i].classList.toggle('btn-dark-mode');
+            }
+
+            var button = document.getElementsByClassName('btn-class');
+            button[0].classList.toggle('btn-dark-mode');
+        }
+    </script>
+</body>
+
+</html>

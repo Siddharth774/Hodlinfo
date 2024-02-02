@@ -1,0 +1,195 @@
+@import '~bootstrap/dist/css/bootstrap-min.css';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Oswald';
+    font-weight: 400;
+}
+
+.dark-mode {
+    background-color: #191d28;
+}
+
+.content-navbar {
+    padding: 20px 30px 0px;
+}
+
+.main-wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-rows: min-content auto auto;
+    row-gap: 50px;
+}
+
+.header-wrapper {
+    row-gap: 10px;
+}
+
+.btn-group {
+    outline: 0;
+    border: 0;
+    background-color: #f8f9fa;
+    padding: 6px 20px;
+    border-radius: 10px;
+    display: block;
+    width: fit-content;
+}
+
+.btn-select-class {
+    outline: 0;
+    border: 0;
+    border: none;
+    background-color: #f8f9fa;
+    color: #0c0f48;
+}
+
+.btn-class,
+.btn-class:hover,
+.btn-class:visited,
+.btn-class:active {
+    outline: 0;
+    border: 0;
+    background-color: #f8f9fa;
+    color: #0c0f48;
+    white-space: nowrap;
+}
+
+.btn-dark-mode {
+    background-color: #2e3241;
+    color: white;
+}
+
+.logo-wrapper {
+    padding: 0;
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-wrapper>img {
+    width: 80%; 
+    justify-self: center;
+}
+
+.center-header {
+    padding: 0;
+    display: flex;
+    gap: 5px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    text-align: center;
+}
+
+.right-header {
+    display: flex;
+    justify-content: center;
+}
+
+.content-table {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    font-weight: 500;
+}
+
+.thead-dark-mode {
+    color: white;
+    opacity: 0.45;
+}
+
+th {
+    text-align: center;
+    color: #0c0f48;
+    opacity: 0.45;
+    cursor: default;
+}
+
+td {
+    text-align: center;
+    padding: 15px 12px;
+    cursor: default;
+}
+
+tbody {
+    background-color: #f8f9fa;
+}
+
+.tbody-dark-mode {
+    color: white;
+    background-color: #2e3241;
+}
+
+tbody>tr>td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+tbody>tr>td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f8f9fa;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #3dc6c1;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2e3241;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
